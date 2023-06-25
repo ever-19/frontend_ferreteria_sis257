@@ -38,71 +38,74 @@ onMounted(() => {
 
 
 <template>
+   <!-- v-if="authStore.token" -->
   <!--INICIA LA TABLA-->
   <div v-if="authStore.token">
-  <div class="find-us">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <RouterLink to="/">Inicio</RouterLink>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">Productos</li>
-              </ol>
-            </nav>
-            <h2>LISTA DE PRODUCTOS</h2>
-            <div class="col-12">
-              <RouterLink to="/productos/crear">Crear Nuevo</RouterLink>
+    <div class="find-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <RouterLink to="/">Inicio</RouterLink>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">Productos</li>
+                </ol>
+              </nav>
+              <h2>LISTA DE PRODUCTOS</h2>
+              <div class="col-12">
+                <RouterLink to="/productos/crear">Crear Nuevo</RouterLink>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-
+    <div class="container">
 
 
 
 
-    <div class="table-responsive">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">N°</th>
-            <th scope="col">Codigo</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Unidad</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Existencia Producto</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(producto, index) in productos.values()" :key="producto.id">
-            <th scope="row">{{ index + 1 }}</th>
-            <td>{{ producto.codigo }}</td>
-            <td>{{ producto.descripcion }}</td>
-            <td>{{ producto.unidad }}</td>
-            <td>{{ producto.precio }}</td>
-            <td>{{ producto.existenciaProducto }}</td>
-            <td>
-              <button class="btn btn-link" @click="toEdit(producto.id)">Editar</button>
-              <button class="btn btn-link" @click="toDelete(producto.id)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">N°</th>
+              <th scope="col">Codigo</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Unidad</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Existencia Producto</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(producto, index) in productos.values()" :key="producto.id">
+              <th scope="row">{{ index + 1 }}</th>
+              <td>{{ producto.codigo }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>{{ producto.unidad }}</td>
+              <td>{{ producto.precio }}</td>
+              <td>{{ producto.existenciaProducto }}</td>
+              <td>
+                <button class="btn btn-link" @click="toEdit(producto.id)">Editar</button>
+                <button class="btn btn-link" @click="toDelete(producto.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
   <!--FIN TABLA-->
 
   <!--INICIA LA VISTA DE PRODUCTOS CON IMAGENES-->
+
+
   <div class="find-us">
     <div class="container">
       <div class="row">
@@ -114,11 +117,18 @@ onMounted(() => {
       </div>
     </div>
   </div>
+
+
+
+
   <div class="container">
     <div class="row">
       <div v-for="p in productos" class="col-md-4">
         <div class="product-item">
-          <a href="#"><img src="@/assets/images/1.-ALAMBRE-DE-PUA.jpg " alt=""></a>
+
+           <a href="#">
+            <img :src="p.urlImagen" alt="Producto">
+          </a> 
 
 
           <div v-if="p.existenciaProducto > 0">

@@ -5,4 +5,5 @@ export interface Producto {
     unidad: string;
     precio: number;
     existenciaProducto: number;
+    urlImagen: string;
   }

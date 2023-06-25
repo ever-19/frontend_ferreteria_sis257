@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'
 
@@ -11,8 +11,10 @@ const ENDPOINT = props.ENDPOINT_API ?? ''
 const codigo = ref('')
 const descripcion = ref('')
 const unidad = ref('')
-const precio = ref('')
-const existenciaProducto = ref('')
+const precio = ref(0)
+const existenciaProducto = ref(0)
+const urlImagen = ref('')
+const total = computed(() => precio.value * existenciaProducto.value)
 
 async function crearProducto() {
   await http
@@ -21,7 +23,9 @@ async function crearProducto() {
       descripcion: descripcion.value,
       unidad: unidad.value,
       precio: precio.value,
-      existenciaProducto: existenciaProducto.value
+      existenciaProducto: existenciaProducto.value,
+      urlImagen: urlImagen.value
+
     })
 
     .then(() => router.push('/productos'))
@@ -77,11 +81,25 @@ function goBack() {
           <input type="number" class="form-control" v-model="precio" placeholder="Precio" required />
           <label for="precio">Precio</label>
         </div>
+        
+
         <div class="form-floating">
           <input type="number" class="form-control" v-model="existenciaProducto" placeholder="Existencia Producto"
             required />
           <label for="existenciaProducto">Existencia Producto</label>
         </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" v-model="urlImagen" placeholder="imagen" required />
+          <label for="imagen">URL Imagen</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="number" class="form-control" v-model="total" placeholder="Total" required readonly />
+          <label for="Total">Total</label>
+        </div>
+
+
 
         <div class="text-center mt-3">
           <button type="submit" class="btn btn-primary btn-lg">Crear</button>

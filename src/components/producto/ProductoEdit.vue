@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'
 
@@ -11,8 +11,10 @@ const ENDPOINT = props.ENDPOINT_API ?? ''
 const codigo = ref('')
 const descripcion = ref('')
 const unidad = ref('')
-const precio = ref()
-const existenciaProducto = ref('')
+const precio = ref(0)
+const existenciaProducto = ref(0)
+const urlImagen = ref('')
+const total = computed(() => precio.value * existenciaProducto.value)
 const id = router.currentRoute.value.params['id']
 
 async function editarProducto() {
@@ -22,7 +24,8 @@ async function editarProducto() {
             descripcion: descripcion.value,
             unidad: unidad.value,
             precio: precio.value,
-            existenciaProducto: existenciaProducto.value
+            existenciaProducto: existenciaProducto.value,
+            urlImagen: urlImagen.value
         })
         .then(() => router.push('/productos'))
 }
@@ -33,7 +36,8 @@ async function getProducto() {
             (descripcion.value = response.data.descripcion),
             (unidad.value = response.data.unidad),
             (precio.value = response.data.precio),
-            (existenciaProducto.value = response.data.existenciaProducto)
+            (existenciaProducto.value = response.data.existenciaProducto),
+            (urlImagen.value = response.data.urlImagen)
     })
 }
 
@@ -49,16 +53,16 @@ onMounted(() => {
 <template>
     <div class="container">
         <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <RouterLink to="/">Inicio</RouterLink>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <RouterLink to="/productos">Productos</RouterLink>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">Editar</li>
-                            </ol>
-                        </nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <RouterLink to="/">Inicio</RouterLink>
+                </li>
+                <li class="breadcrumb-item">
+                    <RouterLink to="/productos">Productos</RouterLink>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Editar</li>
+            </ol>
+        </nav>
 
         <div class="find-us">
             <div class="row">
@@ -96,7 +100,15 @@ onMounted(() => {
                     <label for="existenciaProducto">ExistenciaProducto</label>
                 </div>
 
+                <div class="form-floating">
+                    <input type="text" class="form-control" v-model="urlImagen" placeholder="imagen" required />
+                    <label for="imagen">URL Imagen</label>
+                </div>
 
+                <div class="form-floating">
+                    <input type="number" class="form-control" v-model="total" placeholder="Total" required readonly />
+                    <label for="Total">Total</label>
+                </div>
 
                 <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
@@ -108,4 +120,5 @@ onMounted(() => {
 
 
 <style></style>
+
 
