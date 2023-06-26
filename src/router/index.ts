@@ -9,25 +9,17 @@ import LoginView from "@/views/LoginView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
+    // {
+    //   path: '/',
+    //   name: 'home',
+    //   component: HomeView
+    // },
 
     
     {
       path: "/login",
       name: "login",
       component: LoginView
-    },
-
-
-
-    {
-      path: '/productovista',
-      name: 'productovista',
-      component: () => import('../views/ProductovistaView.vue')
     },
 
     {
@@ -43,7 +35,7 @@ const router = createRouter({
     },
 
     {
-      path: '/productos',
+      path: '/',
       name: 'productos',
       component: () => import('../views/ProductoView.vue'),
       children: [
