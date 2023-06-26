@@ -7,35 +7,45 @@ const authStore = useAuthStore();
 
 <template>
     <header class="">
-        <nav class="navbar navbar-expand-lg" >
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="index.html">
                     <h2>Ferreteria <em>Sucre</em></h2>
                 </a>
-                <button 
-                class="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" 
-                aria-expanded="false" 
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <!-- <li class="nav-item ">
+                        <li class="nav-item ">
                             <a class="nav-link" href="/">Inicio<span class="sr-only">(current)</span>
                             </a>
-                        </li> -->
+                        </li>
+
+                        <!--<li class="nav-item">
+                            <a class="nav-link" href="">
+                        <li class="breadcrumb-item">
+                            <RouterLink to="/productovista"></RouterLink>Productos
+                        </li>
+                        </a>
+                        </li>  -->
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="/">Inicio</a>
+                            <a class="nav-link" href="/productos">Productos</a>
                         </li>
+
+
+
+
+                        <!--<a class="nav-link">
+                            <RouterLink to="/contacto"> Contacto</RouterLink>
+                        </a>-->
 
                         <li class="nav-item">
                             <a class="nav-link" href="/contacto">Contacto</a>
                         </li>
+
                         <li class="nav-item">
                             <a v-if="!authStore.token" class="nav-link" href="/login">Iniciar Sesion</a>
                             <a v-else @click="authStore.logout()" class="nav-link">Cerrar Sesión</a>

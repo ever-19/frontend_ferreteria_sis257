@@ -38,7 +38,7 @@ onMounted(() => {
 
 
 <template>
-  <!-- v-if="authStore.token" -->
+   <!-- v-if="authStore.token" -->
   <!--INICIA LA TABLA-->
   <div v-if="authStore.token">
     <div class="find-us">
@@ -125,9 +125,12 @@ onMounted(() => {
     <div class="row">
       <div v-for="p in productos" class="col-md-4">
         <div class="product-item">
-          <a href="#">
+
+           <a href="#">
             <img :src="p.urlImagen" alt="Producto">
-          </a>
+          </a> 
+
+
           <div v-if="p.existenciaProducto > 0">
             <div class="down-content">
               <a href="/detalle">

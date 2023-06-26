@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="inner-content">
-                        <p>Copyright &copy; 2023 Proyecto Ferreteria.
+                        <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
 
-                            - SIS257: <a rel="nofollow noopener" href=""
-                                target="_blank">INFORMÁTICA</a></p>
+                            - Design: <a rel="nofollow noopener" href="https://templatemo.com"
+                                target="_blank">TemplateMo</a></p>
                     </div>
                 </div>
             </div>
