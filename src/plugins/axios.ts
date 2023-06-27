@@ -3,6 +3,7 @@ import { useAuthStore } from "@/stores/index";
 
 const axios: AxiosInstance = Axios.create({
   baseURL: import.meta.env.VITE_BASE_URL_ENDPOINT
+  // hacer referencia a variable de entorno en vue
 });
 
 axios.interceptors.request.use(config => {

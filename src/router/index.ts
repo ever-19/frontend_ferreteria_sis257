@@ -15,7 +15,7 @@ const router = createRouter({
       component: HomeView
     },
 
-    
+
     {
       path: "/login",
       name: "login",
@@ -52,7 +52,19 @@ const router = createRouter({
         { path: 'editar/:id', component: () => import('../components/producto/ProductoEdit.vue') }
       ]
     },
-
+    {
+      path: '/categorias',
+      name: 'categorias',
+      component: () => import('../views/CategoriaView.vue'),
+      children: [
+        { path: '', component: () => import('../components/categoria/CategoriaList.vue') },
+        { path: 'crear', component: () => import('../components/categoria/CategoriaCreate.vue') },
+        {
+          path: 'editar/:id',
+          component: () => import('../components/categoria/CategoriaEdit.vue')
+        }
+      ]
+    },
 
 
     {

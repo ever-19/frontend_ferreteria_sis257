@@ -14,6 +14,7 @@ const props = defineProps<{
 const ENDPOINT = props.ENDPOINT_API ?? ''
 var productos = ref<Producto[]>([])
 
+
 async function getProductos() {
   productos.value = await http.get(ENDPOINT).then((response) => response.data)
 }
@@ -75,6 +76,7 @@ onMounted(() => {
           <thead>
             <tr>
               <th scope="col">N°</th>
+              <th scope="col">Categoria</th>
               <th scope="col">Codigo</th>
               <th scope="col">Descripcion</th>
               <th scope="col">Unidad</th>
@@ -86,6 +88,7 @@ onMounted(() => {
           <tbody>
             <tr v-for="(producto, index) in productos.values()" :key="producto.id">
               <th scope="row">{{ index + 1 }}</th>
+              <td>{{ producto.categoria.descripcion }}</td>
               <td>{{ producto.codigo }}</td>
               <td>{{ producto.descripcion }}</td>
               <td>{{ producto.unidad }}</td>

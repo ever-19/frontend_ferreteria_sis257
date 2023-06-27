@@ -1,13 +1,25 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'
+import type { Categoria } from '@/models/categoria';
+
+var categorias = ref<Categoria[]>([])
+async function getCategorias() {
+  categorias.value = await http.get("categorias").then((response) => response.data)
+
+}
+
+onMounted(() => {
+  getCategorias()
+})
 
 const props = defineProps<{
   ENDPOINT_API: string
 }>()
 
 const ENDPOINT = props.ENDPOINT_API ?? ''
+const idCategoria = ref('')
 const codigo = ref('')
 const descripcion = ref('')
 const unidad = ref('')
@@ -19,6 +31,7 @@ const total = computed(() => precio.value * existenciaProducto.value)
 async function crearProducto() {
   await http
     .post(ENDPOINT, {
+      idCategoria: idCategoria.value,
       codigo: codigo.value,
       descripcion: descripcion.value,
       unidad: unidad.value,
@@ -64,6 +77,16 @@ function goBack() {
 
     <div class="row">
       <form @submit.prevent="crearProducto">
+        <!-- <div class="form-floating mb-3">
+          <input type="number" class="form-control" v-model="idCategoria" placeholder=" IDCategoria" required />
+          <label for="idCategoria">Categoria</label>
+        </div> -->
+        <div class="form-floating mb-3">
+          <select  v-model="idCategoria" class="form-select">
+          <option v-for="categoria in categorias" :value="categoria.id">{{ categoria.descripcion }} </option>
+        </select>
+        </div>
+        
         <div class="form-floating mb-3">
           <input type="text" class="form-control" v-model="codigo" placeholder="Codigo" required />
           <label for="codigo">Codigo</label>
