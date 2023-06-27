@@ -55,7 +55,7 @@ onMounted(() => {
         <div class="row">
             <form @submit.prevent="editarCategoria">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" v-model="categoria" placeholder="Categoria" required />
+                    <input type="text" class="form-control" v-model="descripcion" placeholder="Categoria" required />
                     <label for="categoria">Categoria</label>
                 </div>
                 <div class="text-center mt-3">
