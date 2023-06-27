@@ -39,7 +39,7 @@ onMounted(() => {
 
 
 <template>
-   <!-- v-if="authStore.token" -->
+  <!-- v-if="authStore.token" -->
   <!--INICIA LA TABLA-->
   <div v-if="authStore.token">
     <div class="find-us">
@@ -87,20 +87,22 @@ onMounted(() => {
             </tr>
           </thead>
           <tbody>
+
             <tr class="table-warning" v-for="(producto, index) in productos.values()" :key="producto.id">
               <th scope="row">{{ index + 1 }}</th>
               <td>{{ producto.categoria.descripcion }}</td>
               <td>{{ producto.codigo }}</td>
               <td>{{ producto.descripcion }}</td>
-              <td>{{ producto.unidad }}</td>
+              <td>{{ producto.unidad.descripcion }}</td>
               <td>{{ producto.precio }}</td>
               <td>{{ producto.existenciaProducto }}</td>
               <td>
                 <button class="btn btn-warning" @click="toEdit(producto.id)">Editar</button>
-               
+
                 <button class="btn btn-danger" @click="toDelete(producto.id)">Eliminar</button>
               </td>
             </tr>
+
           </tbody>
         </table>
       </div>
@@ -108,7 +110,7 @@ onMounted(() => {
   </div>
   <!--FIN TABLA-->
 
-  <!--INICIA LA VISTA DE PRODUCTOS CON IMAGENES-->
+  <!-- INICIA LA VISTA DE PRODUCTOS CON IMAGENES -->
 
 
   <div class="find-us">
@@ -131,9 +133,9 @@ onMounted(() => {
       <div v-for="p in productos" class="col-md-4">
         <div class="product-item">
 
-           <a href="#">
+          <a href="#">
             <img :src="p.urlImagen" alt="Producto">
-          </a> 
+          </a>
 
 
           <div v-if="p.existenciaProducto > 0">
@@ -142,7 +144,7 @@ onMounted(() => {
                 <h4>{{ p.descripcion }}</h4>
               </a>
               <h6>Bs{{ p.precio }}</h6>
-              <p>{{ p.unidad }}</p>
+              <p>{{ p.unidad.descripcion }}</p>
               <h7>DISPONIBLE</h7>
 
             </div>

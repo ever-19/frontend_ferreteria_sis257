@@ -3,7 +3,8 @@ import { computed, onMounted, ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'
 import type { Categoria } from '@/models/categoria';
-
+import type { Unidad } from '@/models/unidad';
+//-------------------------------
 var categorias = ref<Categoria[]>([])
 async function getCategorias() {
   categorias.value = await http.get("categorias").then((response) => response.data)
@@ -11,6 +12,15 @@ async function getCategorias() {
 
 onMounted(() => {
   getCategorias()
+})
+// -------------------------------
+var unidades = ref<Unidad[]>([])
+async function getUnidades() {
+  unidades.value = await http.get("unidades").then((response) => response.data)
+}
+
+onMounted(() => {
+  getUnidades()
 })
 
 const props = defineProps<{
@@ -21,7 +31,7 @@ const ENDPOINT = props.ENDPOINT_API ?? ''
 const idCategoria = ref('')
 const codigo = ref('')
 const descripcion = ref('')
-const unidad = ref('')
+const idUnidad = ref('')
 const precio = ref(0)
 const existenciaProducto = ref(0)
 const urlImagen = ref('')
@@ -33,7 +43,7 @@ async function crearProducto() {
       idCategoria: idCategoria.value,
       codigo: codigo.value,
       descripcion: descripcion.value,
-      unidad: unidad.value,
+      idUnidad: idUnidad.value,
       precio: precio.value,
       existenciaProducto: existenciaProducto.value,
       urlImagen: urlImagen.value
@@ -92,16 +102,18 @@ function goBack() {
           <label for="descripcion">Descripcion</label>
         </div>
 
-        <div class="form-floating">
-          <input type="text" class="form-control" v-model="unidad" placeholder="Unidad" required />
-          <label for="unidad">Unidad</label>
+        <div class="form-floating mb-3">
+          <select  v-model="idUnidad" class="form-select">
+          <option v-for="unidad in unidades" :value="unidad.id">{{ unidad.descripcion }} </option>
+        </select>
+        <label for="categoria">Unidad</label>
         </div>
+
         <div class="form-floating">
           <input type="number" class="form-control" v-model="precio" placeholder="Precio" required />
           <label for="precio">Precio</label>
         </div>
         
-
         <div class="form-floating">
           <input type="number" class="form-control" v-model="existenciaProducto" placeholder="Existencia Producto"
             required />

@@ -31,6 +31,11 @@ const authStore = useAuthStore();
                         </li>
 
                         <li class="nav-item">
+                            <RouterLink to="/unidades" class="nav-link click-scroll">Unidad</RouterLink>
+                        </li>
+
+
+                        <li class="nav-item">
                             <a class="nav-link click-scroll" href="/">Inicio</a>
                         </li>
 
