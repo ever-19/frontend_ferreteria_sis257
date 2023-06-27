@@ -67,8 +67,8 @@ function goBack() {
                 <li class="breadcrumb-item active" aria-current="page">Crear</li>
               </ol>
             </nav>
-            <h2>EDITAR DATOS DEL PRODUCTO</h2>
-            <button class="btn btn-link" @click="goBack">Volver</button>
+            <h2>INSERTAR DATOS DEL PRODUCTO</h2>
+            <button class="btn btn-success" @click="goBack">Volver</button>
           </div>
         </div>
       </div>

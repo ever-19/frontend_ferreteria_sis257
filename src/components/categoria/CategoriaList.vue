@@ -34,23 +34,39 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><RouterLink to="/">Inicio</RouterLink></li>
-        <li class="breadcrumb-item active" aria-current="page">Categorias</li>
-      </ol>
-    </nav>
-
-    <div class="row">
-      <h2>Lista de Categorias</h2>
-      <div class="col-12">
-        <RouterLink to="/categorias/crear">Crear Nuevo</RouterLink>
+  <div class="find-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <RouterLink to="/">Inicio</RouterLink>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+              </ol>
+            </nav>
+            <h2>LISTA DE CATEGORIAS</h2>
+            <div class="col-12">
+              <RouterLink to="/categorias/crear">Crear Nuevo</RouterLink>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+
+
+
+
+  <div class="container">
+
 
     <div class="table-responsive">
-      <table class="table table-bordered">
+      <table class="table table-dark table-striped">
+        <!-- <table class="table table-bordered"> -->
         <thead>
           <tr>
             <th scope="col">N°</th>
@@ -59,12 +75,12 @@ onMounted(() => {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(categoria, index) in categorias.values()" :key="categoria.id">
+          <tr class="table-warning" v-for="(categoria, index) in categorias.values()" :key="categoria.id">
             <th scope="row">{{ index + 1 }}</th>
             <td>{{ categoria.descripcion }}</td>
             <td>
-              <button class="btn btn-link" @click="toEdit(categoria.id)">Editar</button>
-              <button class="btn btn-link" @click="toDelete(categoria.id)">Eliminar</button>
+              <button class="btn btn-warning" @click="toEdit(categoria.id)">Editar</button>
+              <button class="btn btn-danger" @click="toDelete(categoria.id)">Eliminar</button>
             </td>
           </tr>
         </tbody>

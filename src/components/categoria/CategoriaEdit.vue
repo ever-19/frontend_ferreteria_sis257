@@ -35,8 +35,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="container">
-        <nav aria-label="breadcrumb">
+  <div class="container">
+<nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <RouterLink to="/">Inicio</RouterLink>
@@ -48,8 +48,16 @@ onMounted(() => {
             </ol>
         </nav>
 
-        <div class="row">
-            <h2>Editar Categoria</h2>
+        <div class="find-us">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+
+                        <h2>EDITAR CATEGORIA</h2>
+                        <button class="btn btn-success" @click="goBack">Volver</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">

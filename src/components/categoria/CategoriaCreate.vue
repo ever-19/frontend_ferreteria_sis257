@@ -23,21 +23,30 @@ function goBack() {
 
 <template>
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <RouterLink to="/">Inicio</RouterLink>
-                </li>
-                <li class="breadcrumb-item">
-                    <RouterLink to="/categorias">Categorías</RouterLink>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">Crear</li>
-            </ol>
-        </nav>
 
-        <div class="row">
-            <h2>Crear Nueva Categoría</h2>
+        <div class="find-us">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <RouterLink to="/">Inicio</RouterLink>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <RouterLink to="/categorias">Categorias</RouterLink>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Crear</li>
+                            </ol>
+                        </nav>
+                        <h2>CREAR NUEVA CATEGORIA</h2>
+                        <button class="btn btn-success" @click="goBack">Volver</button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
 
         <div class="row">
             <form @submit.prevent="crearCategoria">

@@ -83,7 +83,7 @@ onMounted(() => {
                     <div class="section-heading">
 
                         <h2>EDITAR DATOS DEL PRODUCTO</h2>
-                        <button class="btn btn-link" @click="goBack">Volver</button>
+                        <button class="btn btn-success" @click="goBack">Volver</button>
                     </div>
                 </div>
             </div>

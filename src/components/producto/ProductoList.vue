@@ -72,7 +72,8 @@ onMounted(() => {
 
 
       <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-dark table-striped">
+          <!-- <table class="table table-bordered"> -->
           <thead>
             <tr>
               <th scope="col">N°</th>
@@ -86,7 +87,7 @@ onMounted(() => {
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(producto, index) in productos.values()" :key="producto.id">
+            <tr class="table-warning" v-for="(producto, index) in productos.values()" :key="producto.id">
               <th scope="row">{{ index + 1 }}</th>
               <td>{{ producto.categoria.descripcion }}</td>
               <td>{{ producto.codigo }}</td>
@@ -95,8 +96,9 @@ onMounted(() => {
               <td>{{ producto.precio }}</td>
               <td>{{ producto.existenciaProducto }}</td>
               <td>
-                <button class="btn btn-link" @click="toEdit(producto.id)">Editar</button>
-                <button class="btn btn-link" @click="toDelete(producto.id)">Eliminar</button>
+                <button class="btn btn-warning" @click="toEdit(producto.id)">Editar</button>
+               
+                <button class="btn btn-danger" @click="toDelete(producto.id)">Eliminar</button>
               </td>
             </tr>
           </tbody>
