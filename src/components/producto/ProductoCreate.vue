@@ -7,7 +7,6 @@ import type { Categoria } from '@/models/categoria';
 var categorias = ref<Categoria[]>([])
 async function getCategorias() {
   categorias.value = await http.get("categorias").then((response) => response.data)
-
 }
 
 onMounted(() => {
@@ -77,14 +76,11 @@ function goBack() {
 
     <div class="row">
       <form @submit.prevent="crearProducto">
-        <!-- <div class="form-floating mb-3">
-          <input type="number" class="form-control" v-model="idCategoria" placeholder=" IDCategoria" required />
-          <label for="idCategoria">Categoria</label>
-        </div> -->
         <div class="form-floating mb-3">
           <select  v-model="idCategoria" class="form-select">
           <option v-for="categoria in categorias" :value="categoria.id">{{ categoria.descripcion }} </option>
         </select>
+        <label for="categoria">Categoria</label>
         </div>
         
         <div class="form-floating mb-3">
