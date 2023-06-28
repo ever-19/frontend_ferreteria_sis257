@@ -77,9 +77,9 @@ onMounted(() => {
           <thead>
             <tr>
               <th scope="col">N°</th>
-              <th scope="col">Categoria</th>
-              <th scope="col">Codigo</th>
-              <th scope="col">Descripcion</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Código</th>
+              <th scope="col">Descripción</th>
               <th scope="col">Unidad</th>
               <th scope="col">Precio</th>
               <th scope="col">Existencia Producto</th>
