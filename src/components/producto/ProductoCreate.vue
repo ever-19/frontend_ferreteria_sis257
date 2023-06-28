@@ -106,7 +106,7 @@ function goBack() {
           <select  v-model="idUnidad" class="form-select">
           <option v-for="unidad in unidades" :value="unidad.id">{{ unidad.descripcion }} </option>
         </select>
-        <label for="categoria">Unidad</label>
+        <label for="unidad">Unidad</label>
         </div>
 
         <div class="form-floating">

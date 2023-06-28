@@ -19,24 +19,37 @@
 -->
                     <div id="map">
                         <iframe
-                        
                             src="https://maps.google.com/maps?q=Parada+a+Tarabuco,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="330px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="left-content">
-                        <h4>CONTÁCTANOS</h4>
-                        <p>Estamos ubicados en la ciudad de Sucre - Chuquisaca - Bolivia.<br><br>Direcion: Av. German Mendoza zona Parada Tarabuco.</p>
+                        <h4>VISÍTANOS</h4>
+                        <p>Estamos ubicados en la ciudad de Sucre - Chuquisaca - Bolivia.<br><br>Direcion: Av. German
+                            Mendoza zona Parada Tarabuco.</p>
                         <ul class="social-icons">
-
+                            <h4>MAS INFORMACION AL:</h4>
+                            <p>(+591) 63716382
+                                
+                            <li><a href="https://wa.me/+59163716382"><i class="fa fa-whatsapp"></i></a></li>
+                            <a href="https://wa.me/+59163716382"><button class="btn btn-success">WHATSAPP</button></a>
+                            
+                            (+591) 68615340
+                                
                             <li><a href="https://wa.me/+59168615340"><i class="fa fa-whatsapp"></i></a></li>
                             <a href="https://wa.me/+59168615340"><button class="btn btn-success">WHATSAPP</button></a>
-                           
+                            </p>
+
+                        </ul>
+                        <ul class="social-icons">
+
+
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   </template>
+</template>
