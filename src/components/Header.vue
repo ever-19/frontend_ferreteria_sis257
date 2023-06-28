@@ -22,15 +22,15 @@ const authStore = useAuthStore();
                             <a class="nav-link" href="/">Inicio<span class="sr-only">(current)</span>
                             </a>
                         </li> -->
-                        <li class="nav-item">
+                        <li  class="nav-item">
                             <RouterLink to="/productos" class="nav-link click-scroll">Productos</RouterLink>
                         </li>
 
-                        <li class="nav-item">
+                        <li v-if="authStore.token" class="nav-item">
                             <RouterLink to="/categorias" class="nav-link click-scroll">Categoria</RouterLink>
                         </li>
 
-                        <li class="nav-item">
+                        <li  v-if="authStore.token" class="nav-item">
                             <RouterLink to="/unidades" class="nav-link click-scroll">Unidad</RouterLink>
                         </li>
 

@@ -3,6 +3,8 @@ import type { Categoria } from '@/models/categoria'
 import { onMounted, ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'
+import { useAuthStore } from "@/stores/index";
+const authStore = useAuthStore();
 
 const props = defineProps<{
   ENDPOINT_API: string
@@ -34,6 +36,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <div v-if="authStore.token">
   <div class="find-us">
     <div class="container">
       <div class="row">
@@ -87,6 +90,7 @@ onMounted(() => {
       </table>
     </div>
   </div>
+</div>
 </template>
 
 <style scoped></style>
