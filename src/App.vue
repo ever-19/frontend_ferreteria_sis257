@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import 'bootstrap/dist/js/bootstrap.bundle';
 import "./vendor/jquery/jquery.min.js"
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
