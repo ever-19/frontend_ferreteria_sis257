@@ -9,8 +9,14 @@ const authStore = useAuthStore();
     <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
+
                 <a class="navbar-brand" href="/">
-                    <h2>Ferreteria <em>Sucre</em></h2>
+                    <h2>
+                        <v-container fluid>
+                            <img src="../assets/images/logo.png" alt="">
+                        </v-container>
+                        Ferreteria <em>Sucre</em>
+                    </h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,8 +31,8 @@ const authStore = useAuthStore();
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="/">Inicio</a>
                         </li>
-                        
-                        <li  class="nav-item">
+
+                        <li class="nav-item">
                             <RouterLink to="/productos" class="nav-link click-scroll">Productos</RouterLink>
                         </li>
 
@@ -34,7 +40,7 @@ const authStore = useAuthStore();
                             <RouterLink to="/categorias" class="nav-link click-scroll">Categoria</RouterLink>
                         </li>
 
-                        <li  v-if="authStore.token" class="nav-item">
+                        <li v-if="authStore.token" class="nav-item">
                             <RouterLink to="/unidades" class="nav-link click-scroll">Unidad</RouterLink>
                         </li>
 
