@@ -49,18 +49,14 @@ onMounted(() => {
             </nav>
             <h2>LISTA DE UNIDADES</h2>
             <div class="col-12">
-              <RouterLink to="/unidades/crear">Crear Nuevo</RouterLink>
             </div>
           </div>
+          <RouterLink class="btn btn-success" to="/unidades/crear"><i class="fa fa-plus-circle"></i></RouterLink>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-
+  <br>
   <div class="container">
 
 
@@ -75,12 +71,12 @@ onMounted(() => {
           </tr>
         </thead>
         <tbody>
-          <tr class="table-warning" v-for="(unidad, index) in unidades.values()" :key="unidad.id">
+          <tr class="table-light" v-for="(unidad, index) in unidades.values()" :key="unidad.id">
             <th scope="row">{{ index + 1 }}</th>
             <td>{{ unidad.descripcion }}</td>
             <td>
-              <button class="btn btn-warning" @click="toEdit(unidad.id)">Editar</button>
-              <button class="btn btn-danger" @click="toDelete(unidad.id)">Eliminar</button>
+              <button class="btn btn-primary btn-sm" @click="toEdit(unidad.id)"><i class="fa fa-edit"></i></button> |
+              <button class="btn btn-danger btn-sm" @click="toDelete(unidad.id)"><i class="fa fa-trash"></i></button>
             </td>
           </tr>
         </tbody>

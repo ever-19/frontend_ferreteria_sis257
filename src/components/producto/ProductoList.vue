@@ -57,20 +57,15 @@ onMounted(() => {
               </nav>
               <h2>LISTA DE PRODUCTOS</h2>
               <div class="col-12">
-                <RouterLink to="/productos/crear">Crear Nuevo</RouterLink>
               </div>
             </div>
+            <RouterLink class="btn btn-success" to="/productos/crear"><i class="fa fa-plus-circle"></i></RouterLink>
           </div>
         </div>
       </div>
     </div>
-
+    <br>
     <div class="container">
-
-
-
-
-
       <div class="table-responsive">
         <table class="table table-dark table-striped">
           <!-- <table class="table table-bordered"> -->
@@ -88,7 +83,7 @@ onMounted(() => {
           </thead>
           <tbody>
 
-            <tr class="table-warning" v-for="(producto, index) in productos.values()" :key="producto.id">
+            <tr class="table-light" v-for="(producto, index) in productos.values()" :key="producto.id">
               <th scope="row">{{ index + 1 }}</th>
               <td>{{ producto.categoria.descripcion }}</td>
               <td>{{ producto.codigo }}</td>
@@ -97,9 +92,8 @@ onMounted(() => {
               <td>{{ producto.precio }}</td>
               <td>{{ producto.existenciaProducto }}</td>
               <td>
-                <button class="btn btn-warning" @click="toEdit(producto.id)">Editar</button>
-
-                <button class="btn btn-danger" @click="toDelete(producto.id)">Eliminar</button>
+                <button class="btn btn-primary btn-sm" @click="toEdit(producto.id)"><i class="fa fa-edit"></i></button> |
+                <button class="btn btn-danger btn-sm" @click="toDelete(producto.id)"><i class="fa fa-trash"></i></button>
               </td>
             </tr>
 

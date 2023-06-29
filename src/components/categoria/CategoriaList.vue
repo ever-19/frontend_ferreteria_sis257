@@ -52,18 +52,15 @@ onMounted(() => {
             </nav>
             <h2>LISTA DE CATEGORIAS</h2>
             <div class="col-12">
-              <RouterLink to="/categorias/crear">Crear Nuevo</RouterLink>
             </div>
           </div>
+          <RouterLink class="btn btn-success" to="/categorias/crear"><i class="fa fa-plus-circle" ></i></RouterLink>
         </div>
       </div>
     </div>
   </div>
 
-
-
-
-
+<br>
   <div class="container">
 
 
@@ -78,12 +75,12 @@ onMounted(() => {
           </tr>
         </thead>
         <tbody>
-          <tr class="table-warning" v-for="(categoria, index) in categorias.values()" :key="categoria.id">
+          <tr class="table-light" v-for="(categoria, index) in categorias.values()" :key="categoria.id">
             <th scope="row">{{ index + 1 }}</th>
             <td>{{ categoria.descripcion }}</td>
             <td>
-              <button class="btn btn-warning" @click="toEdit(categoria.id)">Editar</button>
-              <button class="btn btn-danger" @click="toDelete(categoria.id)">Eliminar</button>
+              <button class="btn btn-primary btn-sm" @click="toEdit(categoria.id)"><i class="fa fa-edit" ></i></button> |
+              <button  class="btn btn-danger btn-sm" @click="toDelete(categoria.id)"><i class="fa fa-trash" ></i></button>
             </td>
           </tr>
         </tbody>
