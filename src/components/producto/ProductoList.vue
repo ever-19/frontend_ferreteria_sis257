@@ -147,7 +147,7 @@ onMounted(() => {
           <div v-else>
             <div class="down-content">
               <a href="/detalle">
-                <h4>{{ p.descripcion }}</h4>
+                <h4><del> {{ p.descripcion }}</del></h4>
               </a>
               <h6>Bs{{ p.precio }}</h6>
               <p></p>
