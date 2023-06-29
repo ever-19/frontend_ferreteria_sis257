@@ -50,7 +50,7 @@ onMounted(() => {
                 <li class="breadcrumb-item active" aria-current="page">Categorias</li>
               </ol>
             </nav>
-            <h2>LISTA DE CATEGORIAS</h2>
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">LISTA DE CATEGORIAS</h2>
             <div class="col-12">
             </div>
           </div>

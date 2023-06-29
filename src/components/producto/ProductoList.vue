@@ -55,7 +55,7 @@ onMounted(() => {
                   <li class="breadcrumb-item active" aria-current="page">Productos</li>
                 </ol>
               </nav>
-              <h2>LISTA DE PRODUCTOS</h2>
+              <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">LISTA DE PRODUCTOS</h2>
               <div class="col-12">
               </div>
             </div>
@@ -112,7 +112,7 @@ onMounted(() => {
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>VISTA DE PRODUCTOS</h2>
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">VISTA DE PRODUCTOS</h2>
           </div>
         </div>
       </div>

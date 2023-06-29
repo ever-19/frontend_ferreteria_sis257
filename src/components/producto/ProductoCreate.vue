@@ -90,16 +90,16 @@ function goBack() {
           <select  v-model="idCategoria" class="form-select">
           <option v-for="categoria in categorias" :value="categoria.id">{{ categoria.descripcion }} </option>
         </select>
-        <label for="categoria">Categoria</label>
+        <label for="categoria">Categoría</label>
         </div>
         
         <div class="form-floating mb-3">
           <input type="text" class="form-control" v-model="codigo" placeholder="Codigo" required />
-          <label for="codigo">Codigo</label>
+          <label for="codigo">Código</label>
         </div>
         <div class="form-floating">
           <input type="text" class="form-control" v-model="descripcion" placeholder="Descripcion" required />
-          <label for="descripcion">Descripcion</label>
+          <label for="descripcion">Descripción</label>
         </div>
 
         <div class="form-floating mb-3">

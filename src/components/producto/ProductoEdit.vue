@@ -16,7 +16,7 @@ onMounted(() => {
 
 var unidades = ref<Unidad[]>([])
 async function getUnidades() {
-  categorias.value = await http.get("unidades").then((response) => response.data)
+  unidades.value = await http.get("unidades").then((response) => response.data)
 }
 
 onMounted(() => {
@@ -57,7 +57,7 @@ async function getProducto() {
         ;   (idCategoria.value = response.data.idCategoria),
             (codigo.value = response.data.codigo),
             (descripcion.value = response.data.descripcion),
-            (idUnidad.value = response.data.unidad),
+            (idUnidad.value = response.data.idUnidad),
             (precio.value = response.data.precio),
             (existenciaProducto.value = response.data.existenciaProducto),
             (urlImagen.value = response.data.urlImagen)
@@ -105,21 +105,21 @@ onMounted(() => {
                     <select v-model="idCategoria" class="form-select" >
                         <option v-for="categoria in categorias" :value="categoria.id" placeholder="categoria" required>{{ categoria.descripcion }} </option>
                     </select>
-                    <label for="categoria">Categoria</label>
+                    <label for="categoria">Categoría</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" v-model="codigo" placeholder="codigo" required />
-                    <label for="codigo">Codigo</label>
+                    <label for="codigo">Código</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" v-model="descripcion" placeholder="Descripcion" required />
-                    <label for="descripcion">Descripcion</label>
+                    <label for="descripcion">Descripción</label>
                 </div>
                 <div class="form-floating mb-3">
                     <select v-model="idUnidad" class="form-select" >
                         <option v-for="unidad in unidades" :value="unidad.id" placeholder="unidad" required>{{ unidad.descripcion }} </option>
                     </select>
-                    <label for="categoria">Categoria</label>
+                    <label for="unidad">Unidad</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="number" class="form-control" v-model="precio" placeholder="Precio" required />
@@ -128,7 +128,7 @@ onMounted(() => {
                 <div class="form-floating mb-3">
                     <input type="number" class="form-control" v-model="existenciaProducto" placeholder="existenciaProducto"
                         required />
-                    <label for="existenciaProducto">ExistenciaProducto</label>
+                    <label for="existenciaProducto">Existencia Producto</label>
                 </div>
 
                 <div class="form-floating">
