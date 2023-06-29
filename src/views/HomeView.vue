@@ -27,7 +27,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="../assets/images/slide_01.jpg" class="d-block w-100" alt="SIEMPRE INNOVANDO">
+                <img src="../assets/images/principal_2.png" class="d-block w-100" alt="SIEMPRE INNOVANDO">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>SIEMPRE INNOVANDO</h5>
                     <p>---</p>
@@ -36,14 +36,14 @@
 
 
             <div class="carousel-item">
-                <img src="../assets/images/slide_03.jpg" class="d-block w-100" alt="SIEMPRE INNOVANDO">
+                <img src="../assets/images/principal_3.png" class="d-block w-100" alt="SIEMPRE INNOVANDO">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>SEGURIDAD Y GARANTIA</h5>
                     <p>---</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../assets/images/slide_02.jpg" class="d-block w-100" alt="TENEMOS TODO LO QUE BUSCAS">
+                <img src="../assets/images/principal_4.png" class="d-block w-100" alt="TENEMOS TODO LO QUE BUSCAS">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>TENEMOS TODO LO QUE BUSCAS</h5>
                     <p>---</p>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="../assets/images/slide_04.jpg" class="d-block w-100" alt="LA MEJOR ATENCION AL CLIENTE">
+                <img src="../assets/images/principal_5.png" class="d-block w-100" alt="LA MEJOR ATENCION AL CLIENTE">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>LA MEJOR ATENCION AL CLIENTE</h5>
                     <p>---</p>
