@@ -12,9 +12,9 @@ import Footer from "./components/Footer.vue";
 </template>
 
 <style>
-@import "./vendor/bootstrap/css/bootstrap.min.css";
-@import "./assets/css/fontawesome.css";
-@import "./assets/css/templatemo-sixteen.css";
-@import "./assets/css/owl.css";
+@import "@/vendor/bootstrap/css/bootstrap.min.css";
+@import "@/assets/css/fontawesome.css";
+@import "@/assets/css/templatemo-sixteen.css";
+@import "@/assets/css/owl.css";
 </style>
 
