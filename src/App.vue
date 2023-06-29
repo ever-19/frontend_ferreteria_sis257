@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "./vendor/jquery/jquery.min.js"
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 </script>
@@ -7,14 +8,14 @@ import Footer from "./components/Footer.vue";
   <main>
     <Header />
     <RouterView />
-    <Footer />
   </main>
+  <Footer />
 </template>
 
 <style>
-@import "@/vendor/bootstrap/css/bootstrap.min.css";
-@import "@/assets/css/fontawesome.css";
-@import "@/assets/css/templatemo-sixteen.css";
-@import "@/assets/css/owl.css";
+@import "./vendor/bootstrap/css/bootstrap.min.css";
+@import "./assets/css/fontawesome.css";
+@import "./assets/css/templatemo-sixteen.css";
+@import "./assets/css/owl.css";
 </style>
 

@@ -14,24 +14,36 @@
                 aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
                 aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../assets/images/slide_01.jpg" class="d-block w-100" alt="PRODUCTOS DE PRIMERA CALIDAD">
+                <img src="../assets/images/slide_05.jpg" class="d-block w-100" alt="PRODUCTOS DE PRIMERA CALIDAD">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PRODUCTOS DE PRIMERA CALIDAD</h5>
                     <p>---</p>
                 </div>
             </div>
+
             <div class="carousel-item">
-                <img src="@/assets/images/slide_03.jpg" class="d-block w-100" alt="SIEMPRE INNOVANDO">
+                <img src="../assets/images/slide_01.jpg" class="d-block w-100" alt="SIEMPRE INNOVANDO">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>SIEMPRE INNOVANDO</h5>
                     <p>---</p>
                 </div>
             </div>
+
+
             <div class="carousel-item">
-                <img src="@/assets/images/slide_02.jpg" class="d-block w-100" alt="TENEMOS TODO LO QUE BUSCAS">
+                <img src="../assets/images/slide_03.jpg" class="d-block w-100" alt="SIEMPRE INNOVANDO">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>SEGURIDAD Y GARANTIA</h5>
+                    <p>---</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/images/slide_02.jpg" class="d-block w-100" alt="TENEMOS TODO LO QUE BUSCAS">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>TENEMOS TODO LO QUE BUSCAS</h5>
                     <p>---</p>
@@ -39,7 +51,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="@/assets/images/slide_04.jpg" class="d-block w-100" alt="LA MEJOR ATENCION AL CLIENTE">
+                <img src="../assets/images/slide_04.jpg" class="d-block w-100" alt="LA MEJOR ATENCION AL CLIENTE">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>LA MEJOR ATENCION AL CLIENTE</h5>
                     <p>---</p>
