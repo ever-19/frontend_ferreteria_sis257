@@ -19,7 +19,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../assets/images/slide_05.jpg" class="d-block w-100" alt="PRODUCTOS DE PRIMERA CALIDAD">
+                <img src="../assets/images/principal_1.png" class="d-block w-100" alt="PRODUCTOS DE PRIMERA CALIDAD">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>PRODUCTOS DE PRIMERA CALIDAD</h5>
                     <p>---</p>
